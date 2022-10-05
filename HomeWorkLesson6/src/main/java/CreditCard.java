@@ -51,15 +51,14 @@ class CreditCards {
         }
     }
     public void setWithDrawCard(double withDraw) {
-        if (withDraw < balance) {
-            String formatBalance = String.format("%.2f",balance);
+            String formatBalance = String.format("%.2f", balance);
             this.balance = balance - withDraw;
-            out.println("Card number: "+ cardNumber + "\nCurrent balance: "+formatBalance);
+            out.println("Card number: " + cardNumber + "\nCurrent balance: " + formatBalance);
+
         }
-        else out.println("Card number: "+ cardNumber + "\nDoesn't have  enough money\n");
+
     }
 
-}
 
 
 
