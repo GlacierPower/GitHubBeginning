@@ -1,4 +1,3 @@
-package com.zhenya_flower.homeworklesson6;
 import static java.lang.System.out;
 
 public class CreditCard extends CreditCards {
