@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "GitHubBeginning"
 include ':app'
+include ':lib'
+include ':Enum'
