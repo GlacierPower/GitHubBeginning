@@ -5,7 +5,9 @@ import java.io.IOException;
 public class Enum extends Description{
     @Override
     void getDescription() {
-
+        Season season = Season.Summer;
+        System.out.println(season+" is the hottest season");
+        // through const
         System.out.println(summer);
         super.getDescription();
 
@@ -74,6 +76,7 @@ public class Enum extends Description{
         }
         j++;
         }
+
     }
 
 enum Season {
@@ -94,7 +97,8 @@ enum Season {
 class Description {
 
     void getDescription() {
-             System.out.println("Winter is the coldest season\n");
+        Season season = Season.Winter;
+             System.out.println(season+" is the coldest season\n");
 
     }
 }
