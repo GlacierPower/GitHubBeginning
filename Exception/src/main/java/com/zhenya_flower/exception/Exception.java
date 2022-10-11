@@ -17,7 +17,7 @@ public class Exception {
         } catch (EngineWasNotStartedException e) {
             e.getMessage();
         }
-        Car mercedes = new Car("Mercedes Benz G-класс (Gelendwagen)",240.0,54884198.10);
+        Car mercedes = new Car("Mercedes Benz G-класс (Gelendwagen )",240.0,54884198.10);
         try {
             mercedes.startEngine();
         }catch (EngineWasNotStartedException e){
