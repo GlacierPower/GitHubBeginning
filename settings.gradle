@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "GitHubBeginning"
-include ':app'
+include ':HomeWork_Lesson9'
