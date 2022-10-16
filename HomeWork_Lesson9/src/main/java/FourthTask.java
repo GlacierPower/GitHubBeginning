@@ -11,7 +11,7 @@ public class FourthTask {
         int[] randomMass = new int[21];
         for (int i = 0; i <= randomMass.length - 1; i++) {
             int randomNumber = new Random().nextInt(99);
-            randomMass[i] += (int) randomNumber;
+            randomMass[i] +=  randomNumber;
         }
         String oldArray = Arrays.toString(randomMass);
         System.out.print("Old array: " + oldArray.replace

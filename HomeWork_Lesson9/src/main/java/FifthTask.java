@@ -15,7 +15,7 @@ public class FifthTask {
         int[] maxNumbArray = new int[12];
         for (int i = 0; i < maxNumbArray.length; i++) {
             int randNumb = new Random().nextInt(15);
-            maxNumbArray[i] += (int) randNumb;
+            maxNumbArray[i] += randNumb;
             System.out.print(maxNumbArray[i] + " ");
         }
         int maxValue = Arrays.stream(maxNumbArray).max().getAsInt();
@@ -29,7 +29,7 @@ public class FifthTask {
         return Ints.indexOf(array, index);
     }
 
-    public static int findInd(int[] array, int index) { //or like this, but the first way i like more))
+    public static int findInd(int[] array, int index) { //or like this, but the first way I like more))
         for (int i = 0; i < array.length; i++) {
             if (array[i] == index) {
                 return i;
