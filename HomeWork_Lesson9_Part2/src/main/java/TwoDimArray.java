@@ -1,5 +1,3 @@
-package com.zhenya_flower.homework_lesson9_part2;
-
 public class TwoDimArray {
     public static void main(String[] args) {
         int[][] twoDimArray = new int[2][2];
