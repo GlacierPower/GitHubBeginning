@@ -28,11 +28,11 @@ public class Shops {
         int choice = -1;
         String menu = "Enter a menu option:\n";
 
-        menu += " 0: Quit\n";
-        menu += " 1: Add new product\n";
-        menu += " 2: Delete product\n";
-        menu += " 3: Edit product\n";
-        menu += " 4: Show list of products\n";
+        menu += " 0: Quit.\n";
+        menu += " 1: Add new product.\n";
+        menu += " 2: Delete product.\n";
+        menu += " 3: Edit product.\n";
+        menu += " 4: Show list of products.\n";
         menu += " Your choice: ";
 
         do {
@@ -41,14 +41,14 @@ public class Shops {
 
             switch (choice) {
                 case 0:
-                    System.out.println("Thanks! Have a great day!");
+                    System.out.println("Thanks for the visit!");
                     break;
                 case 1:
                     try {
                         aProduct = getProductInfo();
                         addProduct(aProduct);
                     } catch (InputMismatchException e) {
-                        System.out.println("You entered incorrect price or id");
+                        System.out.println("You entered incorrect price or id.");
                     }
                     break;
                 case 2:
@@ -59,14 +59,14 @@ public class Shops {
                         aProduct = getProductInfo();
                         editProduct(aProduct);
                     } catch (InputMismatchException e) {
-                        System.out.println("You entered incorrect price or id");
+                        System.out.println("You entered incorrect price or id.");
                     }
                     break;
                 case 4:
                     sortList();
                     break;
                 default:
-                    System.out.println("Invalid menu item " + choice);
+                    System.out.println("Invalid menu item: " + choice);
             }
         }
         while (choice != 0);
@@ -80,11 +80,11 @@ public class Shops {
         Product newProd;
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter id");
+        System.out.println("Enter id: ");
         id = sc.nextInt();
-        System.out.println("Enter name");
+        System.out.println("Enter name: ");
         name = sc.next();
-        System.out.println("Enter price");
+        System.out.println("Enter price: ");
         price = sc.nextInt();
         newProd = new Product(id, name, price);
         return newProd;
@@ -105,7 +105,7 @@ public class Shops {
 
     public void deleteProduct(HashSet hashSet) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter ID");
+        System.out.println("Enter ID: ");
         int sc = scanner.nextInt();
         for (Product prod : products) {
             if (prod.getId() == sc) {
@@ -119,10 +119,10 @@ public class Shops {
         int choice = -1;
         String menu = "Enter a menu option:\n";
 
-        menu += " 0: Back\n";
-        menu += " 1: Increase sort\n";
-        menu += " 2: Decrease sort\n";
-        menu += " 3: Sort by time\n";
+        menu += " 0: Back.\n";
+        menu += " 1: Increase sort.\n";
+        menu += " 2: Decrease sort.\n";
+        menu += " 3: Sort by time.\n";
         do {
             System.out.print(menu);
             choice = scanner.nextInt();
