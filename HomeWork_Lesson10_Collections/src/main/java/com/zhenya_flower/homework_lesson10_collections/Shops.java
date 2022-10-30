@@ -3,6 +3,7 @@ package com.zhenya_flower.homework_lesson10_collections;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.ConcurrentModificationException;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Objects;
@@ -19,7 +20,7 @@ public class Shops {
     }
 
     public Shops() {
-        products = new HashSet<Product>();
+        products = new HashSet<>();
     }
 
     private void shopsTask() {
@@ -52,7 +53,12 @@ public class Shops {
                     }
                     break;
                 case 2:
-                    deleteProduct(products);
+                    try {
+                        deleteProduct(products);
+                    } catch (ConcurrentModificationException e) {
+                        System.out.println("Something went wrong, try again.");
+                    }
+
                     break;
                 case 3:
                     try {
@@ -60,6 +66,8 @@ public class Shops {
                         editProduct(aProduct);
                     } catch (InputMismatchException e) {
                         System.out.println("You entered incorrect price or id.");
+                    } catch (ConcurrentModificationException e) {
+                        System.out.println("Something went wrong, try again.");
                     }
                     break;
                 case 4:
@@ -149,8 +157,8 @@ public class Shops {
     }
 
     public void decreaseSort() {
-        ArrayList<Product> decreaseSort = new ArrayList<Product>(products);
-        decreaseSort.sort(new Comparator<Product>() {
+        ArrayList<Product> decreaseSort = new ArrayList<>(products);
+        decreaseSort.sort(new Comparator<>() {
             @Override
             public int compare(Product product, Product t1) {
                 return String.valueOf(t1.getPrice()).compareTo(String.valueOf(product.getPrice()));
@@ -176,8 +184,8 @@ public class Shops {
     }
 
     public void increaseSort() {
-        ArrayList<Product> increaseSort = new ArrayList<Product>(products);
-        increaseSort.sort(new Comparator<Product>() {
+        ArrayList<Product> increaseSort = new ArrayList<>(products);
+        increaseSort.sort(new Comparator<>() {
             @Override
             public int compare(Product product, Product t1) {
                 return String.valueOf(t1.getPrice()).compareTo
@@ -202,13 +210,9 @@ public class Shops {
     }
 
     public void sortByTime() {
-        ArrayList<Product> sortByTime = new ArrayList<Product>(products);
-        sortByTime.sort(new Comparator<Product>() {
-            @Override
-            public int compare(Product product, Product t1) {
-                return String.valueOf(product.getPrice()).lastIndexOf(String.valueOf(t1.getPrice()));
-            }
-        });
+        ArrayList<Product> sortByTime = new ArrayList<>(products);
+        sortByTime.sort((product, t1) -> String.valueOf(product.getPrice())
+                .lastIndexOf(String.valueOf(t1.getPrice())));
         for (Product product : sortByTime) {
             System.out.print("Id: " + product.getId() + " Name: "
                     + product.getName() + " Price: " + product.getPrice() + "\n");
