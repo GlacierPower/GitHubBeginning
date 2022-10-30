@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class Product extends Shops{
     Scanner sc = new Scanner(System.in);
-    private String id;
+    private int id;
     private String name;
-    private String price;
+    private int price;
 
 
-    public Product(String id, String  name, String price) {
+    public Product(int id, String  name, int price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -23,11 +23,11 @@ public class Product extends Shops{
         return name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -46,12 +46,12 @@ public class Product extends Shops{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(sc, product.sc) && Objects.equals(name, product.name) && Objects.equals(price, product.price) && Objects.equals(id, product.id);
+        return id == product.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sc, name, price, id);
+        return Objects.hash(id);
     }
 }
 
