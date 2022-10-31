@@ -111,6 +111,7 @@ public class Shops {
         products.add(newProduct);
     }
 
+
     public void deleteProduct(HashSet hashSet) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter ID: ");
@@ -131,6 +132,7 @@ public class Shops {
         menu += " 1: Increase sort.\n";
         menu += " 2: Decrease sort.\n";
         menu += " 3: Sort by time.\n";
+        menu += " Your choice: ";
         do {
             System.out.print(menu);
             choice = scanner.nextInt();
