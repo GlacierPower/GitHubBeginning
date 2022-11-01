@@ -112,6 +112,9 @@ public class Shops {
     }
 
 
+
+
+
     public void deleteProduct(HashSet hashSet) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter ID: ");
